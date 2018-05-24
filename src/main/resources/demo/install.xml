@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<installation xmlns="https://www.sagaoftherealms.net/installer">
+    <step>
+        <name>Check for OC</name>
+        <description>Checking for oc tools version 3.7.0 or greater</description>
+        <command>oc version</command>
+        <outputmatcher>eq:oc v3.7.0-rc.0+e92d5c5</outputmatcher>
+        <failmessage>Oc oc v3.7.0-rc.0+e92d5c5 not found</failmessage>
+        <nextname>Check for KeyCloak</nextname>
+    </step>
+    <step>
+        <name>Check for KeyCloak</name>
+        <description>Checking if your OpenShift cluster has Keycloak installed</description>
+        <command>oc version</command>
+        <outputmatcher>eq:-1</outputmatcher>
+        <failmessage>not implemented</failmessage>
+    </step>
+</installation>

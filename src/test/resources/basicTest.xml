@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<installation xmlns="https://www.sagaoftherealms.net/installer">
+    <step>
+        <name>getProjects</name>
+        <description>Get a list of projects</description>
+        <command>oc get projects</command>
+        <outputmatcher>\w+</outputmatcher>
+        <failmessage>Fail</failmessage>
+        <nextname>addProject</nextname>
+    </step>
+    <step>
+        <name>addProject</name>
+        <description>Add a project</description>
+        <command>oc create -f boo.json</command>
+        <outputmatcher>\w+</outputmatcher>
+        <failmessage>Fail 2</failmessage>
+    </step>
+</installation>

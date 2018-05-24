@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.sagaoftherealms.net/installer"
+           xmlns="https://www.sagaoftherealms.net/installer"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="stepType">
+        <xs:all>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="command" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="outputmatcher" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="failmessage" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="nextname" type="xs:string" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:element name="installation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="step" type="stepType" maxOccurs="100"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>
